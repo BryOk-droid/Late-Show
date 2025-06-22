@@ -18,7 +18,7 @@ def register():
         return jsonify({"error": "Username already exists. Please choose another."}), 409
 
     user = User(username=username)
-    user.password_hash = password  # this triggers the setter and hashes the password
+    user.password_hash = password  
 
     db.session.add(user)
     db.session.commit()
